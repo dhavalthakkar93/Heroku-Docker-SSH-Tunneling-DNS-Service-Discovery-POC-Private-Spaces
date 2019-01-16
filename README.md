@@ -1,6 +1,6 @@
 # Heroku-Docker-SSH-Tunneling-POC-Private-Spaces
 
-This proof of concept app is intended to demonstrate SSH Tunneling for Docker Containers in Heroku.  
+This proof of concept app is intended to demonstrate SSH Tunneling for Docker Containers in Heroku Private Spaces.  
 
 First clone the code
 
@@ -39,7 +39,7 @@ Scaling dynos... done, now running web at 2:Standard-1X
 ```
 heroku ps -a <APP_NAME>
 
-=== web (Standard-1X): /bin/sh -c gunicorn\ --bind\ 0.0.0.0:\$PORT\ wsgi\ \&\&\ bash\ /app/.profile.d/heroku-exec.sh (3)
+=== web (Standard-1X): /bin/sh -c bash /heroku-exec.sh && gunicorn --bind 0.0.0.0:$PORT wsgi (3)
 web.1: up 2019/01/13 00:48:24 +0530 (~ 12m ago)
 web.2: up 2019/01/13 00:48:31 +0530 (~ 12m ago)
 web.3: up 2019/01/13 00:48:31 +0530 (~ 12m ago)
